@@ -1,7 +1,147 @@
 <resources>
-    <string name="app_name">STUDY TRACK</string>
+    <string name="app_name">StudyTrack</string>
+
+    <string name="splash_tagline">Tu plataforma escolar personal para avanzar cada semana</string>
+
+    <string name="login_title">Bienvenido de nuevo</string>
+    <string name="login_subtitle">Inicia sesión para sincronizar tu progreso</string>
     <string name="email_hint">Correo electrónico</string>
     <string name="password_hint">Contraseña</string>
-    <string name="login_text">Iniciar Sesión</string>
-    <string name="register_text">Registrarse</string>
+    <string name="name_hint">Nombre visible</string>
+    <string name="photo_url_hint">URL de foto (opcional)</string>
+    <string name="login_text">Iniciar sesión</string>
+    <string name="register_text">Crear cuenta</string>
+    <string name="login_google_text">Continuar con Google</string>
+
+    <string name="dashboard_welcome">Hola, %1$s</string>
+    <string name="dashboard_greeting">Buen progreso, %1$s</string>
+    <string name="dashboard_subtitle">Planifica tu estudio de hoy con enfoque académico.</string>
+    <string name="dashboard_summary_title">Resumen académico</string>
+    <string name="dashboard_quick_actions">Acciones rápidas</string>
+    <string name="dashboard_events_title">Próximos eventos</string>
+    <string name="dashboard_menu_home">Inicio</string>
+    <string name="dashboard_menu_calendar">Calendario</string>
+    <string name="dashboard_menu_subjects">Materias</string>
+    <string name="dashboard_menu_profile">Perfil</string>
+
+    <string name="drawer_header_title">Panel estudiantil</string>
+    <string name="drawer_notifications">Notificaciones</string>
+    <string name="drawer_settings">Configuración</string>
+    <string name="drawer_dark_mode">Modo oscuro</string>
+    <string name="drawer_help">Ayuda</string>
+    <string name="drawer_logout">Cerrar sesión</string>
+    <string name="drawer_notification_badge">3</string>
+    <string name="drawer_new_notifications">Nuevas notificaciones</string>
+
+    <string name="summary_active_subjects">Materias activas</string>
+    <string name="summary_pending_tasks">Tareas pendientes</string>
+    <string name="summary_next_exams">Exámenes próximos</string>
+    <string name="summary_studied_hours">Horas estudiadas</string>
+
+    <string name="quick_action_subjects">Materias</string>
+    <string name="quick_action_tasks">Tareas</string>
+    <string name="quick_action_exams">Exámenes</string>
+    <string name="quick_action_schedule">Horario</string>
+    <string name="quick_action_calendar">Calendario</string>
+    <string name="quick_action_notes">Notas</string>
+    <string name="quick_action_reminders">Recordatorios</string>
+    <string name="quick_action_ai">Asistente IA</string>
+
+    <string name="event_priority_high">Prioridad alta</string>
+    <string name="event_priority_medium">Prioridad media</string>
+    <string name="event_priority_low">Prioridad baja</string>
+
+    <string name="event_demo_1_subject">Matemáticas</string>
+    <string name="event_demo_1_date">Vie 24, 10:00 • Examen parcial</string>
+    <string name="event_demo_2_subject">Historia</string>
+    <string name="event_demo_2_date">Lun 27, 08:30 • Entrega de ensayo</string>
+    <string name="event_demo_3_subject">Programación</string>
+    <string name="event_demo_3_date">Mar 28, 14:00 • Práctica guiada</string>
+
+    <string name="dashboard_notifications_content_desc">Abrir notificaciones</string>
+    <string name="dashboard_settings_content_desc">Abrir configuración</string>
+    <string name="dashboard_drawer_content_desc">Abrir menú lateral</string>
+    <string name="notification_indicator_content_desc">Tienes notificaciones pendientes</string>
+
+    <string name="placeholder_calendar_title">Calendario académico</string>
+    <string name="placeholder_calendar_desc">Visualiza parciales, entregas y sesiones planificadas en una vista mensual.</string>
+    <string name="placeholder_subjects_title">Materias</string>
+    <string name="placeholder_subjects_desc">Organiza contenidos, progreso y objetivos por materia.</string>
+    <string name="placeholder_notifications_title">Notificaciones</string>
+    <string name="placeholder_notifications_desc">Mantente al día con recordatorios, cambios y alertas académicas.</string>
+    <string name="placeholder_help_title">Centro de ayuda</string>
+    <string name="placeholder_help_desc">Encuentra guías rápidas para aprovechar StudyTrack al máximo.</string>
+    <string name="placeholder_action_soon">Esta funcionalidad estará disponible próximamente.</string>
+
+    <string name="card_title_tasks">Plan de tareas</string>
+    <string name="card_desc_tasks">Organiza actividades por prioridad y fecha límite.</string>
+    <string name="card_title_notes">Notas inteligentes</string>
+    <string name="card_desc_notes">Captura apuntes rápidos y conviértelos en resúmenes.</string>
+    <string name="card_title_calendar">Calendario académico</string>
+    <string name="card_desc_calendar">Visualiza entregas y exámenes en una sola vista.</string>
+    <string name="card_title_stats">Estadísticas</string>
+    <string name="card_desc_stats">Mide progreso semanal y consistencia de estudio.</string>
+    <string name="card_title_ai">Asistente IA educativo</string>
+    <string name="card_desc_ai">Recibe apoyo para resolver dudas y planificar sesiones.</string>
+    <string name="card_title_sync">Sincronización cloud</string>
+    <string name="card_desc_sync">Mantén tus datos seguros y disponibles offline/online.</string>
+
+    <string name="profile_section_title">Perfil de cuenta</string>
+    <string name="profile_email_label">Correo</string>
+    <string name="profile_provider_label">Proveedor</string>
+    <string name="profile_registered_label">Fecha de registro</string>
+    <string name="profile_last_login_label">Último acceso</string>
+    <string name="profile_save_changes">Actualizar perfil</string>
+
+    <string name="settings_section_title">Preferencias</string>
+    <string name="settings_dark_mode">Modo oscuro</string>
+    <string name="settings_dark_mode_desc">Adapta StudyTrack a tu entorno visual.</string>
+    <string name="settings_logout_title">Cerrar sesión segura</string>
+    <string name="settings_logout_desc">Cierra Firebase, Google y limpia caché local.</string>
+    <string name="logout_text">Cerrar sesión</string>
+
+    <string name="validation_email_required">Ingresa tu correo para continuar.</string>
+    <string name="validation_email_invalid">El formato del correo no es válido.</string>
+    <string name="validation_password_required">Ingresa tu contraseña.</string>
+    <string name="validation_password_length">La contraseña debe tener al menos 6 caracteres.</string>
+    <string name="validation_name_required">Ingresa un nombre visible.</string>
+    <string name="validation_photo_url_invalid">La URL de la foto no tiene un formato válido.</string>
+
+    <string name="loading_auth">Autenticando...</string>
+    <string name="loading_profile">Actualizando perfil...</string>
+    <string name="loading_logout">Cerrando sesión...</string>
+
+    <string name="msg_welcome_user">Bienvenido, %1$s</string>
+    <string name="msg_profile_updated">Perfil actualizado correctamente.</string>
+    <string name="msg_logout_success">Sesión cerrada de forma segura.</string>
+    <string name="msg_offline_session">Sin internet: usando sesión local segura.</string>
+    <string name="msg_session_expired">Tu sesión expiró. Inicia sesión nuevamente.</string>
+
+    <string name="error_auth_generic">No fue posible completar la autenticación.</string>
+    <string name="error_no_internet">Sin conexión. Revisa internet e intenta de nuevo.</string>
+    <string name="error_token_invalid">Tu sesión no es válida. Inicia sesión nuevamente.</string>
+    <string name="error_firebase_timeout">Firebase tardó demasiado en responder.</string>
+    <string name="error_account_disabled">Tu cuenta está deshabilitada.</string>
+    <string name="error_sha1_mismatch">Error de configuración SHA-1 o cliente OAuth.</string>
+    <string name="error_google_config_invalid">Configura correctamente default_web_client_id y google-services.json.</string>
+    <string name="error_google_cancelled">Inicio de sesión con Google cancelado.</string>
+    <string name="error_google_failed">No se pudo autenticar con Google.</string>
+    <string name="error_google_services_invalid">google-services.json no coincide con el proyecto Firebase.</string>
+    <string name="error_invalid_credentials">Correo o contraseña incorrectos.</string>
+    <string name="error_user_not_found">No existe una cuenta con ese correo.</string>
+    <string name="error_too_many_requests">Demasiados intentos. Espera unos minutos.</string>
+    <string name="error_profile_update">No se pudo actualizar tu perfil.</string>
+
+    <string name="provider_google">Google</string>
+    <string name="provider_password">Correo y contraseña</string>
+    <string name="provider_unknown">Desconocido</string>
+
+    <string name="unknown_user">Estudiante</string>
+    <string name="unknown_email">Sin correo</string>
+    <string name="empty_text">Aun no hay datos disponibles.</string>
+
+    <string name="stat_value_subjects">6</string>
+    <string name="stat_value_tasks">9</string>
+    <string name="stat_value_exams">3</string>
+    <string name="stat_value_hours">14h</string>
 </resources>

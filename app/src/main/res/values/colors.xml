@@ -1,10 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="st_background">#F2F5FB</color>
+    <color name="st_surface">#FFFFFF</color>
+    <color name="st_surface_variant">#E7EDF7</color>
+    <color name="st_card">#FFFFFF</color>
+    <color name="st_card_alt">#EDF2FA</color>
+    <color name="st_drawer_bg">#F9FBFF</color>
+    <color name="st_nav_bg">#FFFFFF</color>
+    <color name="st_nav_indicator">#DAE7FD</color>
+
+    <color name="st_primary">#5DADE2</color>
+    <color name="st_on_primary">#0B1220</color>
+    <color name="st_primary_container">#CBE8FA</color>
+    <color name="st_on_primary_container">#0F243D</color>
+
+    <color name="st_secondary">#7C4DFF</color>
+    <color name="st_on_secondary">#FFFFFF</color>
+    <color name="st_secondary_container">#E5DCFF</color>
+    <color name="st_on_secondary_container">#2C136B</color>
+
+    <color name="st_tertiary">#4B8D6D</color>
+    <color name="st_on_tertiary">#FFFFFF</color>
+    <color name="st_tertiary_container">#D5F0E1</color>
+    <color name="st_on_tertiary_container">#123625</color>
+
+    <color name="st_on_background">#0F172A</color>
+    <color name="st_on_surface">#0F172A</color>
+    <color name="st_text_muted">#66758B</color>
+    <color name="st_outline">#C5D0DF</color>
+
+    <color name="st_priority_high">#EF5350</color>
+    <color name="st_priority_medium">#F6C453</color>
+    <color name="st_priority_low">#47B881</color>
+
+    <color name="st_success">#2AA772</color>
+    <color name="st_warning">#F59E0B</color>
+    <color name="st_error">#EF4444</color>
+
+    <color name="st_scrim">#660B1220</color>
+
     <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
 </resources>

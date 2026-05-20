@@ -17,6 +17,7 @@ android {
             minorApiLevel = 1
         }
     }
+    ndkVersion = "30.0.14904198"
 
     defaultConfig {
         applicationId = "com.example.studytrack"
@@ -45,11 +46,18 @@ android {
 
 dependencies {
     implementation(libs.appcompat)
+    implementation(libs.activity)
+    implementation(libs.constraintlayout)
+    implementation(libs.drawerlayout)
+    implementation(libs.recyclerview)
     implementation(libs.credentials)
     implementation(libs.credentials.play.services.auth)
     implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.firestore)
     implementation(libs.googleid)
+    implementation(libs.glide)
     implementation(libs.material)
+    implementation(libs.security.crypto)
     
     // Firebase
     implementation(platform(libs.firebase.bom))
