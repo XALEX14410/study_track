@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">STUDY TRACK</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_text">Iniciar Sesión</string>
+    <string name="register_text">Registrarse</string>
+</resources>
