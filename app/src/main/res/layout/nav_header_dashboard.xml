@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawerHeaderRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/space_md"
+    android:paddingTop="@dimen/space_xl"
+    android:paddingEnd="@dimen/space_md"
+    android:paddingBottom="@dimen/space_md">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/drawerProfileImage"
+        android:layout_width="@dimen/header_profile_image_size"
+        android:layout_height="@dimen/header_profile_image_size"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_profile_placeholder"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Full" />
+
+    <TextView
+        android:id="@+id/drawerUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_sm"
+        android:text="@string/unknown_user"
+        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+        android:textColor="@color/st_on_surface"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/drawerUserEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xs"
+        android:text="@string/unknown_email"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="@color/st_text_muted" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_md"
+        android:background="@drawable/bg_badge_small"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/space_sm"
+        android:paddingTop="@dimen/space_xs"
+        android:paddingEnd="@dimen/space_sm"
+        android:paddingBottom="@dimen/space_xs">
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:background="@drawable/bg_notification_dot"
+            android:contentDescription="@string/notification_indicator_content_desc" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_xs"
+            android:text="@string/drawer_new_notifications"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            android:textColor="@color/st_on_primary"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

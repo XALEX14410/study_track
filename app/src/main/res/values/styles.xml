@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.StudyTrack.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="cardCornerRadius">@dimen/radius_md</item>
+        <item name="cardElevation">2dp</item>
+        <item name="strokeColor">@color/st_outline</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:backgroundTint">@color/st_card</item>
+    </style>
+
+    <style name="Widget.StudyTrack.Card.Highlight" parent="Widget.StudyTrack.Card">
+        <item name="android:backgroundTint">@color/st_card_alt</item>
+    </style>
+
+    <style name="Widget.StudyTrack.IconButton" parent="Widget.Material3.Button.TonalButton">
+        <item name="cornerRadius">@dimen/radius_sm</item>
+        <item name="android:minWidth">44dp</item>
+        <item name="android:minHeight">44dp</item>
+        <item name="iconTint">@color/st_on_surface</item>
+        <item name="backgroundTint">@color/st_surface_variant</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+    </style>
+
+    <style name="Widget.StudyTrack.BottomNavigation" parent="Widget.Material3.BottomNavigationView">
+        <item name="itemActiveIndicatorStyle">@style/Widget.StudyTrack.BottomNavigation.ActiveIndicator</item>
+        <item name="itemRippleColor">@color/st_nav_indicator</item>
+    </style>
+
+    <style name="Widget.StudyTrack.BottomNavigation.ActiveIndicator"
+        parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/st_nav_indicator</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.StudyTrack.Pill</item>
+    </style>
+
+    <style name="ShapeAppearance.StudyTrack.Pill" parent="ShapeAppearance.Material3.Corner.Full" />
+
+</resources>
