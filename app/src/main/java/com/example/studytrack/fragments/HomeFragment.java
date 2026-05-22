@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,7 +29,6 @@ import com.example.studytrack.models.UserModel;
 import com.example.studytrack.utils.SessionManager;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -162,9 +162,20 @@ public class HomeFragment extends Fragment {
 
         quickActionsRecycler.setLayoutManager(new GridLayoutManager(requireContext(), 4));
         quickActionsRecycler.setAdapter(new QuickActionsAdapter(items, item -> {
-            Snackbar.make(rootView, item.getTitle(), Snackbar.LENGTH_SHORT).show();
-            if (notificationsButton != null) {
-                notificationDot.setVisibility(View.VISIBLE);
+            int iconResId = item.getIconResId();
+
+            if (iconResId == R.drawable.ic_subjects) {
+                Navigation.findNavController(rootView)
+                        .navigate(R.id.action_nav_home_to_nav_materias);
+            } else if (iconResId == R.drawable.ic_task) {
+                Navigation.findNavController(rootView)
+                        .navigate(R.id.action_nav_home_to_nav_tareas);
+            } else if (iconResId == R.drawable.ic_calendar) {
+                Navigation.findNavController(rootView)
+                        .navigate(R.id.action_nav_home_to_nav_examenes);
+            } else if (iconResId == R.drawable.ic_schedule) {
+                Navigation.findNavController(rootView)
+                        .navigate(R.id.action_nav_home_to_nav_calendar);
             }
         }));
     }

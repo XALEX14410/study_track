@@ -144,4 +144,33 @@
     <string name="stat_value_tasks">9</string>
     <string name="stat_value_exams">3</string>
     <string name="stat_value_hours">14h</string>
+
+    <string name="materias_title">Mis Materias</string>
+    <string name="tareas_title">Tareas Pendientes</string>
+    <string name="examenes_title">Próximos Exámenes</string>
+
+    <string name="fab_add_materia">Agregar materia</string>
+    <string name="fab_add_tarea">Agregar tarea</string>
+    <string name="fab_add_examen">Agregar examen</string>
+
+    <string name="toast_add_subject">Agregar materia</string>
+    <string name="toast_add_task">Agregar tarea</string>
+    <string name="toast_add_exam">Agregar examen</string>
+
+    <string name="detalle_materia_title">Detalle de materia</string>
+    <string name="detalle_materia_nombre_label">Nombre</string>
+    <string name="detalle_materia_descripcion_label">Descripcion</string>
+    <string name="detalle_materia_horario_label">Horario</string>
+
+    <string name="detalle_tarea_title">Detalle de tarea</string>
+    <string name="detalle_tarea_titulo_label">Titulo</string>
+    <string name="detalle_tarea_descripcion_label">Descripcion</string>
+    <string name="detalle_tarea_fecha_entrega_label">Fecha de entrega</string>
+
+    <string name="detalle_examen_title">Detalle de examen</string>
+    <string name="detalle_examen_materia_label">Materia</string>
+    <string name="detalle_examen_tema_label">Tema</string>
+    <string name="detalle_examen_fecha_hora_label">Fecha y hora</string>
+
+    <string name="detail_value_empty">Sin informacion disponible</string>
 </resources>

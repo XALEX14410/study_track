@@ -52,6 +52,8 @@ dependencies {
     implementation(libs.recyclerview)
     implementation(libs.credentials)
     implementation(libs.credentials.play.services.auth)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.firestore)
     implementation(libs.googleid)

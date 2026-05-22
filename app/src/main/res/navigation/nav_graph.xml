@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.studytrack.fragments.HomeFragment"
+        android:label="Inicio">
+
+        <action
+            android:id="@+id/action_nav_home_to_nav_materias"
+            app:destination="@id/nav_materias" />
+
+        <action
+            android:id="@+id/action_nav_home_to_nav_tareas"
+            app:destination="@id/nav_tareas" />
+
+        <action
+            android:id="@+id/action_nav_home_to_nav_examenes"
+            app:destination="@id/nav_examenes" />
+
+        <action
+            android:id="@+id/action_nav_home_to_nav_calendar"
+            app:destination="@id/nav_calendar" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_materias"
+        android:name="com.example.studytrack.fragments.MateriasFragment"
+        android:label="Materias">
+
+        <action
+            android:id="@+id/action_nav_materias_to_detalleMateriaFragment"
+            app:destination="@id/detalleMateriaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_tareas"
+        android:name="com.example.studytrack.fragments.TareasFragment"
+        android:label="Tareas">
+
+        <action
+            android:id="@+id/action_nav_tareas_to_detalleTareaFragment"
+            app:destination="@id/detalleTareaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_examenes"
+        android:name="com.example.studytrack.fragments.ExamenesFragment"
+        android:label="Examenes">
+
+        <action
+            android:id="@+id/action_nav_examenes_to_detalleExamenFragment"
+            app:destination="@id/detalleExamenFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_calendar"
+        android:name="com.example.studytrack.fragments.CalendarFragment"
+        android:label="Calendario" />
+
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.studytrack.fragments.ProfileFragment"
+        android:label="Perfil" />
+
+    <fragment
+        android:id="@+id/nav_notifications"
+        android:name="com.example.studytrack.fragments.NotificationsFragment"
+        android:label="Notificaciones" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.studytrack.fragments.SettingsFragment"
+        android:label="Ajustes" />
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.example.studytrack.fragments.HelpFragment"
+        android:label="Ayuda" />
+
+    <fragment
+        android:id="@+id/detalleMateriaFragment"
+        android:name="com.example.studytrack.fragments.DetalleMateriaFragment"
+        android:label="Detalle Materia" />
+
+    <fragment
+        android:id="@+id/detalleTareaFragment"
+        android:name="com.example.studytrack.fragments.DetalleTareaFragment"
+        android:label="Detalle Tarea" />
+
+    <fragment
+        android:id="@+id/detalleExamenFragment"
+        android:name="com.example.studytrack.fragments.DetalleExamenFragment"
+        android:label="Detalle Examen" />
+
+</navigation>

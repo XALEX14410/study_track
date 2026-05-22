@@ -13,16 +13,14 @@ import androidx.core.view.GravityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.activity.OnBackPressedCallback;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.NavigationUI;
 
 import com.example.studytrack.R;
 import com.example.studytrack.activities.LoginActivity;
-import com.example.studytrack.fragments.CalendarFragment;
-import com.example.studytrack.fragments.HelpFragment;
 import com.example.studytrack.fragments.HomeFragment;
-import com.example.studytrack.fragments.NotificationsFragment;
-import com.example.studytrack.fragments.ProfileFragment;
 import com.example.studytrack.fragments.SettingsFragment;
-import com.example.studytrack.fragments.SubjectsFragment;
 import com.example.studytrack.models.UserModel;
 import com.example.studytrack.ui.EdgeToEdgeUtils;
 import com.google.android.material.card.MaterialCardView;
@@ -43,6 +41,7 @@ public class DashboardActivity extends BaseProtectedActivity
     private MaterialToolbar toolbar;
     private BottomNavigationView bottomNavigationView;
     private NavigationView navigationView;
+    private NavController navController;
 
     private ShapeableImageView drawerProfileImage;
     private TextView drawerUserName;
@@ -71,11 +70,16 @@ public class DashboardActivity extends BaseProtectedActivity
         setupDrawerMenu();
         setupBackPressedHandler();
 
-        bottomNavigationView.setOnItemSelectedListener(item -> navigateTo(item.getItemId()));
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.dashboardFragmentContainer);
+        if (navHostFragment != null) {
+            navController = navHostFragment.getNavController();
+            NavigationUI.setupWithNavController(bottomNavigationView, navController);
+            NavigationUI.setupWithNavController(navigationView, navController);
 
-        if (savedInstanceState == null) {
-            bottomNavigationView.setSelectedItemId(R.id.nav_home);
-            navigationView.setCheckedItem(R.id.drawer_home);
+            navController.addOnDestinationChangedListener((controller, destination, arguments) -> {
+                toolbar.setTitle(destination.getLabel());
+            });
         }
 
         if (getIntent().getBooleanExtra("extra_offline_session", false)) {
@@ -90,72 +94,24 @@ public class DashboardActivity extends BaseProtectedActivity
 
     @Override
     public void onOpenNotificationsRequested() {
-        openDrawerDestination(R.id.drawer_notifications);
+        openDrawerDestination(R.id.nav_notifications);
     }
 
     @Override
     public void onOpenSettingsRequested() {
-        openDrawerDestination(R.id.drawer_settings);
-    }
-
-    private boolean navigateTo(int itemId) {
-        Fragment fragment;
-        String title;
-
-        if (itemId == R.id.nav_home) {
-            fragment = new HomeFragment();
-            title = getString(R.string.dashboard_menu_home);
-            navigationView.setCheckedItem(R.id.drawer_home);
-        } else if (itemId == R.id.nav_calendar) {
-            fragment = new CalendarFragment();
-            title = getString(R.string.dashboard_menu_calendar);
-            navigationView.setCheckedItem(R.id.drawer_home);
-        } else if (itemId == R.id.nav_subjects) {
-            fragment = new SubjectsFragment();
-            title = getString(R.string.dashboard_menu_subjects);
-            navigationView.setCheckedItem(R.id.drawer_home);
-        } else if (itemId == R.id.nav_profile) {
-            fragment = new ProfileFragment();
-            title = getString(R.string.dashboard_menu_profile);
-            navigationView.setCheckedItem(R.id.drawer_home);
-        } else {
-            return false;
-        }
-
-        showFragment(fragment);
-        toolbar.setTitle(title);
-        return true;
+        openDrawerDestination(R.id.nav_settings);
     }
 
     private void openDrawerDestination(int drawerItemId) {
-        if (drawerItemId == R.id.drawer_home) {
-            bottomNavigationView.setSelectedItemId(R.id.nav_home);
-        } else if (drawerItemId == R.id.drawer_notifications) {
-            showFragment(new NotificationsFragment());
-            toolbar.setTitle(R.string.drawer_notifications);
-            navigationView.setCheckedItem(R.id.drawer_notifications);
-        } else if (drawerItemId == R.id.drawer_settings) {
-            showFragment(new SettingsFragment());
-            toolbar.setTitle(R.string.drawer_settings);
-            navigationView.setCheckedItem(R.id.drawer_settings);
-        } else if (drawerItemId == R.id.drawer_help) {
-            showFragment(new HelpFragment());
-            toolbar.setTitle(R.string.drawer_help);
-            navigationView.setCheckedItem(R.id.drawer_help);
-        } else if (drawerItemId == R.id.drawer_dark_mode) {
+        if (drawerItemId == R.id.drawer_dark_mode) {
             toggleDarkMode();
         } else if (drawerItemId == R.id.drawer_logout) {
             performLogout();
+        } else if (navController != null) {
+            navController.navigate(drawerItemId);
         }
 
         rootView.closeDrawer(GravityCompat.START);
-    }
-
-    private void showFragment(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction()
-            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
-                .replace(R.id.dashboardFragmentContainer, fragment)
-                .commit();
     }
 
     private void performLogout() {

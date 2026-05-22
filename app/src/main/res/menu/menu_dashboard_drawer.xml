@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/drawer_home"
+            android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
             android:title="@string/dashboard_menu_home" />
 
         <item
-            android:id="@+id/drawer_notifications"
+            android:id="@+id/nav_notifications"
             android:icon="@drawable/ic_notifications"
             android:title="@string/drawer_notifications" />
 
         <item
-            android:id="@+id/drawer_settings"
+            android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings"
             android:title="@string/drawer_settings" />
 
@@ -24,7 +24,7 @@
             app:actionLayout="@layout/item_drawer_dark_mode_action" />
 
         <item
-            android:id="@+id/drawer_help"
+            android:id="@+id/nav_help"
             android:icon="@drawable/ic_help"
             android:title="@string/drawer_help" />
     </group>

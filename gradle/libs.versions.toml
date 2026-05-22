@@ -19,6 +19,7 @@ recyclerview = "1.4.0"
 drawerlayout = "1.2.0"
 securityCrypto = "1.1.0"
 glide = "4.16.0"
+navigation = "2.8.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -40,6 +41,8 @@ recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version
 drawerlayout = { group = "androidx.drawerlayout", name = "drawerlayout", version.ref = "drawerlayout" }
 security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigation" }
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigation" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

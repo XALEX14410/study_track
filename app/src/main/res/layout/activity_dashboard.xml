@@ -28,10 +28,13 @@
             app:navigationIcon="@drawable/ic_menu"
             app:titleTextColor="@color/st_on_surface" />
 
-        <FrameLayout
+        <androidx.fragment.app.FragmentContainerView
             android:id="@+id/dashboardFragmentContainer"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph"
             app:layout_constraintBottom_toTopOf="@id/bottomNavigationCard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

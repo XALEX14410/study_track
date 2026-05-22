@@ -9,7 +9,7 @@
         android:icon="@drawable/ic_calendar"
         android:title="@string/dashboard_menu_calendar" />
     <item
-        android:id="@+id/nav_subjects"
+        android:id="@+id/nav_materias"
         android:icon="@drawable/ic_subjects"
         android:title="@string/dashboard_menu_subjects" />
     <item
