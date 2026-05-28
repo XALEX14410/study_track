@@ -122,8 +122,9 @@
     <string name="error_token_invalid">Tu sesión no es válida. Inicia sesión nuevamente.</string>
     <string name="error_firebase_timeout">Firebase tardó demasiado en responder.</string>
     <string name="error_account_disabled">Tu cuenta está deshabilitada.</string>
-    <string name="error_sha1_mismatch">Error de configuración SHA-1 o cliente OAuth.</string>
-    <string name="error_google_config_invalid">Configura correctamente default_web_client_id y google-services.json.</string>
+    <string name="error_sha1_mismatch">DEVELOPER_ERROR: revisa package com.jesuslara.studytrack, SHA-1/SHA-256 y cliente OAuth de Firebase.</string>
+    <string name="error_google_config_invalid">Configura correctamente default_web_client_id y google-services.json para com.jesuslara.studytrack.</string>
+    <string name="error_google_play_services_unavailable">Google Play Services no está disponible o está desactualizado en este dispositivo.</string>
     <string name="error_google_cancelled">Inicio de sesión con Google cancelado.</string>
     <string name="error_google_failed">No se pudo autenticar con Google.</string>
     <string name="error_google_services_invalid">google-services.json no coincide con el proyecto Firebase.</string>
@@ -146,6 +147,14 @@
     <string name="stat_value_hours">14h</string>
 
     <string name="materias_title">Mis Materias</string>
+    <string name="materias_subtitle">Tus materias activas e inactivas</string>
+    <string name="materias_empty">Aun no tienes materias registradas.\nPulsa el boton + para agregar la primera.</string>
+    <string name="materias_error">No se pudieron cargar tus materias.</string>
+    <string name="materia_estado_activa">Activa</string>
+    <string name="materia_estado_inactiva">Inactiva</string>
+    <string name="materia_aula_format">Aula: %1$s</string>
+    <string name="materia_profesor_format">Prof. %1$s</string>
+    <string name="materia_counts_format">%1$d examenes · %2$d tareas</string>
     <string name="tareas_title">Tareas Pendientes</string>
     <string name="examenes_title">Próximos Exámenes</string>
 

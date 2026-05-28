@@ -11,7 +11,7 @@ googleServices {
 }
 
 android {
-    namespace = "com.example.studytrack"
+    namespace = "com.jesuslara.studytrack"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -20,7 +20,7 @@ android {
     ndkVersion = "30.0.14904198"
 
     defaultConfig {
-        applicationId = "com.example.studytrack"
+        applicationId = "com.jesuslara.studytrack"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -59,7 +59,6 @@ dependencies {
     implementation(libs.googleid)
     implementation(libs.glide)
     implementation(libs.material)
-    implementation(libs.security.crypto)
     
     // Firebase
     implementation(platform(libs.firebase.bom))

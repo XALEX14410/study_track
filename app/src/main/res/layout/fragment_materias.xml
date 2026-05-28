@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/materiasRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/st_background"
     android:paddingStart="@dimen/space_md"
     android:paddingTop="@dimen/space_md"
     android:paddingEnd="@dimen/space_md"
@@ -14,24 +16,68 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/materias_title"
-        android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall"
         android:textColor="@color/st_on_surface"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/materiasSubtitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xs"
+        android:text="@string/materias_subtitle"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="@color/st_text_muted"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/materiasTitleTextView" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/materiasRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/space_sm"
+        android:layout_marginTop="@dimen/space_md"
         android:clipToPadding="false"
         android:paddingBottom="@dimen/space_xxl"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/materiasTitleTextView" />
+        app:layout_constraintTop_toBottomOf="@id/materiasSubtitleTextView"
+        tools:listitem="@layout/item_materia" />
+
+    <ProgressBar
+        android:id="@+id/materiasProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/st_primary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/materiasRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/materiasRecyclerView" />
+
+    <TextView
+        android:id="@+id/materiasEmptyTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_lg"
+        android:layout_marginEnd="@dimen/space_lg"
+        android:drawablePadding="@dimen/space_sm"
+        android:gravity="center"
+        android:text="@string/materias_empty"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        android:textColor="@color/st_text_muted"
+        android:visibility="gone"
+        app:drawableTint="@color/st_text_muted"
+        app:drawableTopCompat="@drawable/ic_subjects"
+        app:layout_constraintBottom_toBottomOf="@id/materiasRecyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/materiasRecyclerView" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/materiasFabAdd"
@@ -40,6 +86,7 @@
         android:layout_margin="@dimen/space_md"
         android:contentDescription="@string/fab_add_materia"
         app:backgroundTint="@color/st_primary"
+        app:elevation="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_add"

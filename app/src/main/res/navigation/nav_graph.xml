@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.studytrack.fragments.HomeFragment"
+        android:name="com.jesuslara.studytrack.fragments.HomeFragment"
         android:label="Inicio">
 
         <action
@@ -28,7 +28,7 @@
 
     <fragment
         android:id="@+id/nav_materias"
-        android:name="com.example.studytrack.fragments.MateriasFragment"
+        android:name="com.jesuslara.studytrack.fragments.MateriasFragment"
         android:label="Materias">
 
         <action
@@ -38,7 +38,7 @@
 
     <fragment
         android:id="@+id/nav_tareas"
-        android:name="com.example.studytrack.fragments.TareasFragment"
+        android:name="com.jesuslara.studytrack.fragments.TareasFragment"
         android:label="Tareas">
 
         <action
@@ -48,7 +48,7 @@
 
     <fragment
         android:id="@+id/nav_examenes"
-        android:name="com.example.studytrack.fragments.ExamenesFragment"
+        android:name="com.jesuslara.studytrack.fragments.ExamenesFragment"
         android:label="Examenes">
 
         <action
@@ -58,42 +58,42 @@
 
     <fragment
         android:id="@+id/nav_calendar"
-        android:name="com.example.studytrack.fragments.CalendarFragment"
+        android:name="com.jesuslara.studytrack.fragments.CalendarFragment"
         android:label="Calendario" />
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.studytrack.fragments.ProfileFragment"
+        android:name="com.jesuslara.studytrack.fragments.ProfileFragment"
         android:label="Perfil" />
 
     <fragment
         android:id="@+id/nav_notifications"
-        android:name="com.example.studytrack.fragments.NotificationsFragment"
+        android:name="com.jesuslara.studytrack.fragments.NotificationsFragment"
         android:label="Notificaciones" />
 
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.example.studytrack.fragments.SettingsFragment"
+        android:name="com.jesuslara.studytrack.fragments.SettingsFragment"
         android:label="Ajustes" />
 
     <fragment
         android:id="@+id/nav_help"
-        android:name="com.example.studytrack.fragments.HelpFragment"
+        android:name="com.jesuslara.studytrack.fragments.HelpFragment"
         android:label="Ayuda" />
 
     <fragment
         android:id="@+id/detalleMateriaFragment"
-        android:name="com.example.studytrack.fragments.DetalleMateriaFragment"
+        android:name="com.jesuslara.studytrack.fragments.DetalleMateriaFragment"
         android:label="Detalle Materia" />
 
     <fragment
         android:id="@+id/detalleTareaFragment"
-        android:name="com.example.studytrack.fragments.DetalleTareaFragment"
+        android:name="com.jesuslara.studytrack.fragments.DetalleTareaFragment"
         android:label="Detalle Tarea" />
 
     <fragment
         android:id="@+id/detalleExamenFragment"
-        android:name="com.example.studytrack.fragments.DetalleExamenFragment"
+        android:name="com.jesuslara.studytrack.fragments.DetalleExamenFragment"
         android:label="Detalle Examen" />
 
 </navigation>

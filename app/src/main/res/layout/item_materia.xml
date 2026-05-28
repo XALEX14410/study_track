@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.StudyTrack.Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/space_sm"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="@color/st_card"
+    app:rippleColor="@color/st_nav_indicator">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_md">
+
+        <TextView
+            android:id="@+id/materiaNombreTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/st_on_surface"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/materiaEstadoTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Matematica I" />
+
+        <TextView
+            android:id="@+id/materiaEstadoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_sm"
+            android:background="@drawable/bg_badge_small"
+            android:paddingStart="@dimen/space_sm"
+            android:paddingTop="@dimen/space_xs"
+            android:paddingEnd="@dimen/space_sm"
+            android:paddingBottom="@dimen/space_xs"
+            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+            android:textColor="@color/st_on_primary"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/materiaNombreTextView"
+            tools:text="Activa" />
+
+        <TextView
+            android:id="@+id/materiaProfesorTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xs"
+            android:drawablePadding="@dimen/space_xs"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+            android:textColor="@color/st_text_muted"
+            app:drawableStartCompat="@drawable/ic_profile_placeholder"
+            app:drawableTint="@color/st_text_muted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/materiaNombreTextView"
+            tools:text="Prof. Juan Perez" />
+
+        <TextView
+            android:id="@+id/materiaAulaTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xs"
+            android:drawablePadding="@dimen/space_xs"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            android:textColor="@color/st_text_muted"
+            app:drawableStartCompat="@drawable/ic_subjects"
+            app:drawableTint="@color/st_text_muted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/materiaProfesorTextView"
+            tools:text="Aula 204" />
+
+        <TextView
+            android:id="@+id/materiaCountsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            android:textColor="@color/st_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/materiaAulaTextView"
+            tools:text="3 examenes · 2 tareas" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
