@@ -20,7 +20,7 @@
             android:layout_width="@dimen/quick_action_icon_size"
             android:layout_height="@dimen/quick_action_icon_size"
             android:contentDescription="@string/app_name"
-            android:tint="@color/st_secondary" />
+            app:tint="@color/st_secondary" />
 
         <TextView
             android:id="@+id/quickActionTitle"

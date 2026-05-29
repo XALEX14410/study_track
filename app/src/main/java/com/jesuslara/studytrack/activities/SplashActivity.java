@@ -12,9 +12,11 @@ import androidx.constraintlayout.motion.widget.MotionLayout;
 import com.jesuslara.studytrack.R;
 import com.jesuslara.studytrack.auth.AuthRepository;
 import com.jesuslara.studytrack.dashboard.DashboardActivity;
+import com.jesuslara.studytrack.utils.AppLogger;
 
 public class SplashActivity extends AppCompatActivity {
 
+    private static final String TAG = "SplashActivity";
     private static final long SPLASH_DELAY_MS = 1400L;
 
     private final Handler handler = new Handler(Looper.getMainLooper());
@@ -35,9 +37,15 @@ public class SplashActivity extends AppCompatActivity {
 
     private void navigateNext() {
         AuthRepository authRepository = new AuthRepository(this);
-        if (authRepository.hasActiveSession()) {
+        boolean activeSession = authRepository.hasActiveSession();
+        boolean offlineSession = authRepository.isUsingOfflineSession();
+
+        AppLogger.logInfo(TAG, "navigateNext: activeSession=" + activeSession
+                + ", offlineSession=" + offlineSession);
+
+        if (activeSession) {
             Intent intent = new Intent(this, DashboardActivity.class);
-            intent.putExtra("extra_offline_session", authRepository.isUsingOfflineSession());
+            intent.putExtra("extra_offline_session", offlineSession);
             startActivity(intent);
         } else {
             startActivity(new Intent(this, LoginActivity.class));

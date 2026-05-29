@@ -127,20 +127,58 @@ public class AuthRepository {
 
     public boolean hasActiveSession() {
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        boolean networkAvailable = NetworkUtils.isNetworkAvailable(appContext);
+        boolean localSession = sessionManager.isLoggedIn();
+
+        AppLogger.logInfo(TAG, "hasActiveSession: firebaseUser="
+                + (currentUser != null ? currentUser.getUid() : "null")
+                + ", network=" + networkAvailable
+                + ", localSession=" + localSession);
+
         if (currentUser != null) {
+            AppLogger.logInfo(TAG, "hasActiveSession → true (Firebase user activo)");
             return true;
         }
 
-        if (sessionManager.isLoggedIn() && !NetworkUtils.isNetworkAvailable(appContext)) {
-            AppLogger.logInfo(TAG, "Using offline session cache");
+        if (localSession && !networkAvailable) {
+            AppLogger.logInfo(TAG, "hasActiveSession → true (sesión offline, sin red)");
             return true;
         }
 
-        return sessionManager.isLoggedIn();
+        if (localSession) {
+            // Firebase null pero red disponible: posible retraso de inicialización del SDK
+            // o sesión invalidada en servidor. Se permite acceso con sesión local.
+            AppLogger.logInfo(TAG, "hasActiveSession → true (sesión local activa, Firebase null con red disponible)");
+            return true;
+        }
+
+        AppLogger.logInfo(TAG, "hasActiveSession → false (sin sesión)");
+        return false;
     }
 
+    /**
+     * Returns true only when the active session is an offline fallback:
+     * Firebase user is unavailable AND no network connection exists.
+     * A local session with network available is NOT considered an offline session
+     * (the Firebase SDK may still be initializing or the token may need refresh).
+     */
     public boolean isUsingOfflineSession() {
-        return firebaseAuth.getCurrentUser() == null && sessionManager.isLoggedIn();
+        boolean firebaseNull = firebaseAuth.getCurrentUser() == null;
+        boolean localSession = sessionManager.isLoggedIn();
+        boolean noNetwork = !NetworkUtils.isNetworkAvailable(appContext);
+        boolean isOffline = firebaseNull && localSession && noNetwork;
+
+        if (isOffline) {
+            AppLogger.logInfo(TAG, "isUsingOfflineSession → true: sin red, usando caché local segura");
+        } else if (firebaseNull && localSession) {
+            // Firebase null pero red disponible: no es sesión offline real.
+            // Causa probable: retraso de inicialización de Firebase Auth SDK o
+            // fallo al descifrar credenciales del Keystore (BOM 34.x).
+            AppLogger.logInfo(TAG, "isUsingOfflineSession → false: Firebase null pero red disponible "
+                    + "(posible retraso de inicialización o error de Keystore)");
+        }
+
+        return isOffline;
     }
 
     @Nullable
