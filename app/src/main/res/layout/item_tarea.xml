@@ -1,49 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/Widget.StudyTrack.Card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/space_sm"
     app:cardBackgroundColor="@color/st_card"
-    app:rippleColor="@color/st_nav_indicator">
+    app:cardCornerRadius="@dimen/radius_md"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/st_outline"
+    app:strokeWidth="1dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:minHeight="120dp"
         android:padding="@dimen/space_md">
 
-        <TextView
-            android:id="@+id/tareaTituloTextView"
+        <CheckBox
+            android:id="@+id/cbCompletada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
-            android:textColor="@color/st_on_surface"
-            android:textStyle="bold" />
+            android:buttonTint="@color/st_primary"
+            android:contentDescription="@string/tarea_checkbox_content_desc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tareaDescripcionTextView"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_sm"
+            android:layout_marginEnd="@dimen/space_sm"
+            android:maxLines="2"
+            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+            android:textColor="@color/st_on_surface"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/btnMenu"
+            app:layout_constraintStart_toEndOf="@id/cbCompletada"
+            app:layout_constraintTop_toTopOf="@id/cbCompletada" />
+
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/tarea_menu_content_desc"
+            android:padding="@dimen/space_sm"
+            android:src="@drawable/ic_more"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/st_text_muted" />
+
+        <TextView
+            android:id="@+id/tvDescripcion"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_xs"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            android:textColor="@color/st_text_muted" />
+            android:textColor="@color/st_text_muted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvNombre"
+            app:layout_constraintTop_toBottomOf="@id/tvNombre" />
 
-        <TextView
-            android:id="@+id/tareaFechaEntregaTextView"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/chipsRow"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_sm"
-            android:background="@drawable/bg_badge_small"
-            android:paddingStart="@dimen/space_sm"
-            android:paddingTop="@dimen/space_xs"
-            android:paddingEnd="@dimen/space_sm"
-            android:paddingBottom="@dimen/space_xs"
-            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
-            android:textColor="@color/st_on_primary"
-            android:textStyle="bold" />
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvNombre"
+            app:layout_constraintTop_toBottomOf="@id/tvDescripcion">
 
-    </LinearLayout>
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipMateria"
+                style="@style/Widget.Material3.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tarea_chip_materia_placeholder"
+                app:chipBackgroundColor="@color/st_surface_variant"
+                app:chipIcon="@drawable/ic_subjects"
+                app:chipIconTint="@color/st_on_surface"
+                app:chipIconVisible="true"
+                app:closeIconVisible="false" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipPrioridad"
+                style="@style/Widget.Material3.Chip.Assist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_sm"
+                android:text="@string/tarea_chip_prioridad_placeholder"
+                app:chipBackgroundColor="@color/st_priority_low"
+                app:chipIcon="@drawable/ic_task"
+                app:chipIconTint="@color/white"
+                app:chipIconVisible="true"
+                app:closeIconVisible="false"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFechaHora"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_sm"
+            android:drawableStart="@drawable/ic_calendar"
+            android:drawablePadding="@dimen/space_xs"
+            android:gravity="center_vertical"
+            android:text="@string/tarea_fecha_hora_placeholder"
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+            android:textColor="@color/st_on_surface"
+            app:drawableTint="@color/st_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvNombre"
+            app:layout_constraintTop_toBottomOf="@id/chipsRow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

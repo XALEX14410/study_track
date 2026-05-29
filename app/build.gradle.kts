@@ -1,28 +1,18 @@
-import com.google.gms.googleservices.GoogleServicesPlugin.MissingGoogleServicesStrategy
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.services)
     alias(libs.plugins.google.firebase.crashlytics)
 }
 
-googleServices {
-    missingGoogleServicesStrategy = MissingGoogleServicesStrategy.WARN
-}
-
 android {
     namespace = "com.jesuslara.studytrack"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
     ndkVersion = "30.0.14904198"
 
     defaultConfig {
         applicationId = "com.jesuslara.studytrack"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -42,6 +32,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -50,6 +44,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation(libs.drawerlayout)
     implementation(libs.recyclerview)
+    implementation(libs.cardview)
     implementation(libs.credentials)
     implementation(libs.credentials.play.services.auth)
     implementation(libs.navigation.fragment)

@@ -38,4 +38,28 @@
 
     <style name="ShapeAppearance.StudyTrack.Pill" parent="ShapeAppearance.Material3.Corner.Full" />
 
+    <!-- Dialog TextInputLayout — 12 dp rounded corners, applies to all non-dropdown fields -->
+    <style name="Widget.StudyTrack.TextInputLayout.Dialog"
+        parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <!-- Dialog dropdown (ExposedDropdownMenu) — 12 dp rounded corners -->
+    <style name="Widget.StudyTrack.TextInputLayout.DialogDropdown"
+        parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxCornerRadiusTopStart">12dp</item>
+        <item name="boxCornerRadiusTopEnd">12dp</item>
+        <item name="boxCornerRadiusBottomStart">12dp</item>
+        <item name="boxCornerRadiusBottomEnd">12dp</item>
+    </style>
+
+    <!-- Materia dropdown — inherits DialogDropdown + primary leading icon tint -->
+    <style name="Widget.StudyTrack.TextInputLayout.MateriaDropdown"
+        parent="Widget.StudyTrack.TextInputLayout.DialogDropdown">
+        <item name="startIconTint">@color/st_primary</item>
+    </style>
+
 </resources>

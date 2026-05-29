@@ -51,7 +51,7 @@
     <string name="event_priority_medium">Prioridad media</string>
     <string name="event_priority_low">Prioridad baja</string>
 
-    <string name="event_demo_1_subject">Matemáticas</string>
+    <string name="event_demo_1_subject">Evento académico</string>
     <string name="event_demo_1_date">Vie 24, 10:00 • Examen parcial</string>
     <string name="event_demo_2_subject">Historia</string>
     <string name="event_demo_2_date">Lun 27, 08:30 • Entrega de ensayo</string>
@@ -156,6 +156,58 @@
     <string name="materia_profesor_format">Prof. %1$s</string>
     <string name="materia_counts_format">%1$d examenes · %2$d tareas</string>
     <string name="tareas_title">Tareas Pendientes</string>
+    <string name="tareas_subtitle">Organiza entregas por prioridad y fecha limite.</string>
+    <string name="tareas_search_hint">Buscar tarea por nombre o materia</string>
+    <string name="tareas_empty_icon_desc">Sin tareas registradas</string>
+    <string name="tareas_empty_title">No tienes tareas por ahora</string>
+    <string name="tareas_empty_desc">Pulsa el boton + para registrar tu primera tarea.</string>
+
+    <string name="tarea_checkbox_content_desc">Marcar tarea como completada</string>
+    <string name="tarea_menu_content_desc">Abrir menu de opciones de tarea</string>
+    <string name="tarea_chip_materia_placeholder">Sin materia</string>
+    <string name="tarea_chip_prioridad_placeholder">Baja</string>
+    <string name="tarea_fecha_hora_placeholder">Sin fecha definida</string>
+
+    <string name="dialog_add_tarea_title">Nueva tarea</string>
+    <string name="dialog_add_tarea_subtitle">Completa la informacion principal para planificar tu entrega.</string>
+    <string name="dialog_edit_tarea_title">Editar tarea</string>
+    <string name="dialog_action_guardar">Guardar</string>
+    <string name="dialog_action_actualizar">Actualizar</string>
+    <string name="dialog_action_cancelar">Cancelar</string>
+    <string name="tarea_nombre_hint">Nombre de la tarea</string>
+    <string name="tarea_descripcion_hint">Descripcion</string>
+    <string name="tarea_materia_hint">Materia</string>
+    <string name="tarea_fecha_hint">Fecha</string>
+    <string name="tarea_hora_hint">Hora</string>
+    <string name="tarea_prioridad_hint">Prioridad</string>
+    <string name="tarea_recordatorio_hint">Recordatorio</string>
+    <string name="tarea_menu_editar">Editar</string>
+    <string name="tarea_menu_eliminar">Eliminar</string>
+    <string name="tarea_estado_completada_format">Completada • %1$s</string>
+
+    <string name="tareas_listener_error">No se pudieron escuchar los cambios en tareas.</string>
+    <string name="tareas_materias_error">No se pudieron cargar las materias.</string>
+    <string name="tareas_navigation_error">No se pudo abrir el detalle de la tarea.</string>
+
+    <string name="tarea_validation_nombre">Ingresa un nombre para la tarea.</string>
+    <string name="tarea_validation_materia">Selecciona una materia valida.</string>
+    <string name="tarea_validation_fecha">Selecciona una fecha de entrega.</string>
+    <string name="tarea_validation_hora">Selecciona una hora de entrega.</string>
+    <string name="tarea_validation_prioridad">Selecciona una prioridad.</string>
+    <string name="tarea_validation_fecha_hora_invalid">La fecha u hora no tiene un formato valido.</string>
+
+    <string name="tarea_creada_ok">Tarea creada correctamente.</string>
+    <string name="tarea_actualizada_ok">Tarea actualizada correctamente.</string>
+    <string name="tarea_guardar_error">No se pudo guardar la tarea.</string>
+    <string name="tarea_actualizar_estado_error">No se pudo actualizar el estado de la tarea.</string>
+
+    <string name="tarea_delete_confirm_title">Eliminar tarea</string>
+    <string name="tarea_delete_confirm_message">Esta accion no se puede deshacer. ¿Deseas continuar?</string>
+    <string name="tarea_eliminada_ok">Tarea eliminada.</string>
+    <string name="tarea_action_undo">Deshacer</string>
+    <string name="tarea_restaurada_ok">Tarea restaurada.</string>
+    <string name="tarea_delete_error">No se pudo eliminar la tarea.</string>
+    <string name="tarea_restore_error">No se pudo restaurar la tarea.</string>
     <string name="examenes_title">Próximos Exámenes</string>
 
     <string name="fab_add_materia">Agregar materia</string>
